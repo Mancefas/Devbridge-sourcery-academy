@@ -1,0 +1,54 @@
+@import '~/sass/variables';
+@import '~/sass/utilities/mixins';
+
+.footer {
+  @include flex-box($justify-content: space-between, $align-items: center);
+
+  @include mobile-breakpoint {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  height: $height-header-footer;
+  margin: 0 auto;
+  max-width: $max-page-width;
+  padding: 0 to-rem(40);
+
+  &__list {
+    @include flex-box(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    @include reset-list-style;
+
+    @include mobile-breakpoint {
+      column-gap: $spacer-l;
+    }
+
+    column-gap: to-rem(16);
+
+    &-item {
+      @include padding-margin-0;
+    }
+  }
+
+  &__text {
+    @include mobile-breakpoint {
+      font-size: $font-size-xs;
+      margin-bottom: $spacer-xxxs;
+      margin-top: $spacer-xxxs;
+      text-align: center;
+    }
+
+    color: $violet-700;
+    display: block;
+    font-family: $main-font;
+    font-size: $font-size-s;
+    font-style: normal;
+    line-height: $line-height-m;
+    margin: 0;
+    text-transform: capitalize;
+  }
+}

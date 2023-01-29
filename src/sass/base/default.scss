@@ -1,0 +1,53 @@
+/* Global element rules
+   Elements, that needs to be styled globally, should be styled here.
+   only native html elements/selectors should be here, if you have class styled in this file - consider separating it to another file.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  @include mobile-breakpoint {
+    font-size: $font-size-s;
+  }
+
+  color: $charcoal-400;
+  font-family: $main-font;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  margin: 0;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-busy='true'] {
+  cursor: wait;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+li {
+  overflow-wrap: break-word;
+}
